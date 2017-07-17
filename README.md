@@ -2,12 +2,13 @@
 
 Make synchronous operation between mysql and redis.
 
-# MySQL binlog On (modify MySQL configuration file)
-server-id=2331
-lob_bn=mysql-bin
-binlog_format=row
+### MySQL binlog On
 
-# STEPs
+server-id=2331<br>
+lob_bn=mysql-bin<br>
+binlog_format=row<br>
+
+## STEPs
 1. npm init
 
 2. npm install

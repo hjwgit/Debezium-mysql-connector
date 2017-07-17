@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var Synchronizer = require('../lib/Synchronizer');
+var config = require('../config/config');
+//var topics = require('../config/topics');
+//config.topics = topics;
+var sync = new Synchronizer(config);
+
+sync.start();
+

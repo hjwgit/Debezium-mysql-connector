@@ -1,0 +1,23 @@
+{
+  "name": "kafka-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "avsc": "^5.0.4",
+    "bluebird": "^3.5.0",
+    "kafka-node": "^1.6.2"
+  },
+  "devDependencies": {
+    "ioredis": "^3.1.1",
+    "jscs": "^3.0.7",
+    "jshint": "^2.9.5",
+    "moment": "^2.18.1",
+    "pm2": "^2.5.0"
+  }
+}

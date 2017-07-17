@@ -1,0 +1,21 @@
+{
+  "topics": {
+    "serverName": "dbserver",
+    "databaseName": "kafka",
+    "tableWhiteList": ["Users", "Devices", "Groups",
+      "User2Devices", "Group2Devices",
+      "Developers", "Products", "OTAs",
+      "Developer2Pros", "Product2OTAs"]
+  },
+    "options": {
+      "host": "localhost:2181", 
+      "ssl": false,
+      "groupId": "SyncGroup",
+      "id": "consumer1",
+      "protocol": ["roundrobin"],
+      "fromOffset": "latest",
+      "outOfRangeOffset": "earliest",
+      "migrateHLC": false,
+      "migrateRolling": true
+    }
+}

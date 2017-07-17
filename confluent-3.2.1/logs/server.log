@@ -1,0 +1,7 @@
+[2017-07-06 18:01:29,972] INFO [GroupCoordinator 0]: Preparing to restabilize group exampletestgroup with old generation 24 (kafka.coordinator.GroupCoordinator)
+[2017-07-06 18:01:29,973] INFO [GroupCoordinator 0]: Stabilized group exampletestgroup generation 25 (kafka.coordinator.GroupCoordinator)
+[2017-07-06 18:01:29,990] INFO [GroupCoordinator 0]: Assignment received from leader for group exampletestgroup for generation 25 (kafka.coordinator.GroupCoordinator)
+[2017-07-06 18:03:45,081] INFO [GroupCoordinator 0]: Preparing to restabilize group exampletestgroup with old generation 25 (kafka.coordinator.GroupCoordinator)
+[2017-07-06 18:04:10,023] INFO [GroupCoordinator 0]: Stabilized group exampletestgroup generation 26 (kafka.coordinator.GroupCoordinator)
+[2017-07-06 18:04:40,024] INFO [GroupCoordinator 0]: Preparing to restabilize group exampletestgroup with old generation 26 (kafka.coordinator.GroupCoordinator)
+[2017-07-06 18:04:40,024] INFO [GroupCoordinator 0]: Group exampletestgroup with generation 27 is now empty (kafka.coordinator.GroupCoordinator)

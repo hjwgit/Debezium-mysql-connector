@@ -1,0 +1,808 @@
+[2017-06-07 10:16:28,721] ERROR Failed to send HTTP request to endpoint: http://localhost:8081/subjects/test-value/versions (io.confluent.kafka.schemaregistry.client.rest.RestService)
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:580)
+	at java.net.Socket.connect(Socket.java:529)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:449)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:544)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:228)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:325)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:343)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1044)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:980)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:898)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1139)
+	at io.confluent.kafka.schemaregistry.client.rest.RestService.sendHttpRequest(RestService.java:142)
+	at io.confluent.kafka.schemaregistry.client.rest.RestService.httpRequest(RestService.java:188)
+	at io.confluent.kafka.schemaregistry.client.rest.RestService.registerSchema(RestService.java:245)
+	at io.confluent.kafka.schemaregistry.client.rest.RestService.registerSchema(RestService.java:237)
+	at io.confluent.kafka.schemaregistry.client.rest.RestService.registerSchema(RestService.java:232)
+	at io.confluent.kafka.schemaregistry.client.CachedSchemaRegistryClient.registerAndGetId(CachedSchemaRegistryClient.java:59)
+	at io.confluent.kafka.schemaregistry.client.CachedSchemaRegistryClient.register(CachedSchemaRegistryClient.java:91)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroSerializer.serializeImpl(AbstractKafkaAvroSerializer.java:72)
+	at io.confluent.kafka.formatter.AvroMessageReader.readMessage(AvroMessageReader.java:158)
+	at kafka.tools.ConsoleProducer$.main(ConsoleProducer.scala:57)
+	at kafka.tools.ConsoleProducer.main(ConsoleProducer.scala)
+[2017-06-07 10:18:10,032] INFO SchemaRegistryConfig values: 
+	authentication.realm = 
+	kafkastore.timeout.ms = 500
+	kafkastore.security.protocol = PLAINTEXT
+	kafkastore.ssl.truststore.type = JKS
+	kafkastore.ssl.protocol = TLS
+	access.control.allow.methods = 
+	authentication.method = NONE
+	ssl.keymanager.algorithm = 
+	schema.registry.zk.namespace = schema_registry
+	ssl.key.password = 
+	ssl.cipher.suites = []
+	avro.compatibility.level = backward
+	shutdown.graceful.ms = 1000
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	metrics.jmx.prefix = kafka.schema.registry
+	ssl.provider = 
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	kafkastore.ssl.keystore.type = JKS
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.truststore.location = 
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.key.password = 
+	ssl.keystore.password = 
+	ssl.client.auth = false
+	kafkastore.init.timeout.ms = 60000
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	request.logger.name = io.confluent.rest-utils.requests
+	kafkastore.ssl.provider = 
+	ssl.protocol = TLS
+	access.control.allow.origin = 
+	ssl.trustmanager.algorithm = 
+	kafkastore.bootstrap.servers = []
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	zookeeper.set.acl = false
+	kafkastore.ssl.keystore.location = 
+	kafkastore.connection.url = localhost:2181
+	metrics.num.samples = 2
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	port = 8081
+	ssl.truststore.password = 
+	debug = false
+	compression.enable = false
+	kafkastore.ssl.truststore.password = 
+	kafkastore.sasl.kerberos.service.name = 
+	kafkastore.ssl.keystore.password = 
+	kafkastore.ssl.cipher.suites = 
+	authentication.roles = [*]
+	ssl.enabled.protocols = []
+	kafkastore.sasl.mechanism = GSSAPI
+	master.eligibility = true
+	listeners = [http://0.0.0.0:8081]
+	ssl.keystore.location = 
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	ssl.truststore.location = 
+	kafkastore.zk.session.timeout.ms = 30000
+	metrics.sample.window.ms = 30000
+	kafkastore.topic = _schemas
+	host.name = cloud-C
+	metric.reporters = []
+	ssl.truststore.type = JKS
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	kafkastore.topic.replication.factor = 3
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	ssl.keystore.type = JKS
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig)
+[2017-06-07 10:18:10,894] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://cloud-C:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-07 10:18:10,907] WARN Creating the schema topic _schemas using a replication factor of 1, which is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-07 10:18:11,246] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-07 10:18:11,248] INFO [kafka-store-reader-thread-_schemas], Starting  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-07 10:18:11,390] INFO Wait to catch up until the offset of the last message at 0 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-07 10:18:11,452] INFO Created schema registry namespace localhost:2181/schema_registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-07 10:18:11,487] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-07 10:18:11,494] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-07 10:18:11,535] INFO Logging initialized @1858ms (org.eclipse.jetty.util.log)
+[2017-06-07 10:18:11,581] INFO Adding listener: http://0.0.0.0:8081 (io.confluent.rest.Application)
+[2017-06-07 10:18:11,667] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server)
+[2017-06-07 10:18:12,377] INFO HV000001: Hibernate Validator 5.1.2.Final (org.hibernate.validator.internal.util.Version)
+[2017-06-07 10:18:12,567] INFO Started o.e.j.s.ServletContextHandler@7991bfbf{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-07 10:18:12,579] INFO Started NetworkTrafficServerConnector@4068f746{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-07 10:18:12,580] INFO Started @2903ms (org.eclipse.jetty.server.Server)
+[2017-06-07 10:18:12,581] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2017-06-07 10:20:48,731] INFO Wait to catch up until the offset of the last message at 1 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-07 10:20:48,786] INFO 127.0.0.1 - - [07/Jun/2017:10:20:48 +0800] "POST /subjects/test-value/versions HTTP/1.1" 200 8  349 (io.confluent.rest-utils.requests)
+[2017-06-07 10:21:18,377] INFO 127.0.0.1 - - [07/Jun/2017:10:21:18 +0800] "POST /subjects/test-value/versions HTTP/1.1" 200 8  8 (io.confluent.rest-utils.requests)
+[2017-06-07 11:40:09,376] ERROR Unknown error when running consumer:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: Error deserializing Avro message for id -1
+Caused by: java.nio.BufferUnderflowException
+	at java.nio.Buffer.nextGetIndex(Buffer.java:492)
+	at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:135)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.getByteBuffer(AbstractKafkaAvroDeserializer.java:75)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:118)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:92)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:120)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:112)
+	at kafka.tools.ConsoleConsumer$.process(ConsoleConsumer.scala:137)
+	at kafka.tools.ConsoleConsumer$.run(ConsoleConsumer.scala:75)
+	at kafka.tools.ConsoleConsumer$.main(ConsoleConsumer.scala:50)
+	at kafka.tools.ConsoleConsumer.main(ConsoleConsumer.scala)
+[2017-06-08 11:30:35,224] INFO 127.0.0.1 - - [08/Jun/2017:11:30:35 +0800] "POST /subjects/test-value/versions HTTP/1.1" 200 8  10 (io.confluent.rest-utils.requests)
+[2017-06-08 11:31:39,457] ERROR Unknown error when running consumer:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: Error deserializing Avro message for id -1
+Caused by: java.nio.BufferUnderflowException
+	at java.nio.Buffer.nextGetIndex(Buffer.java:492)
+	at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:135)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.getByteBuffer(AbstractKafkaAvroDeserializer.java:75)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:118)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:92)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:120)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:112)
+	at kafka.tools.ConsoleConsumer$.process(ConsoleConsumer.scala:137)
+	at kafka.tools.ConsoleConsumer$.run(ConsoleConsumer.scala:75)
+	at kafka.tools.ConsoleConsumer$.main(ConsoleConsumer.scala:50)
+	at kafka.tools.ConsoleConsumer.main(ConsoleConsumer.scala)
+[2017-06-08 11:32:49,027] ERROR Unknown error when running consumer:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: Error deserializing Avro message for id -1
+Caused by: java.nio.BufferUnderflowException
+	at java.nio.Buffer.nextGetIndex(Buffer.java:492)
+	at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:135)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.getByteBuffer(AbstractKafkaAvroDeserializer.java:75)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:118)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:92)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:120)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:112)
+	at kafka.tools.ConsoleConsumer$.process(ConsoleConsumer.scala:137)
+	at kafka.tools.ConsoleConsumer$.run(ConsoleConsumer.scala:75)
+	at kafka.tools.ConsoleConsumer$.main(ConsoleConsumer.scala:50)
+	at kafka.tools.ConsoleConsumer.main(ConsoleConsumer.scala)
+[2017-06-08 11:33:54,715] ERROR Unknown error when running consumer:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: Error deserializing Avro message for id -1
+Caused by: java.nio.BufferUnderflowException
+	at java.nio.Buffer.nextGetIndex(Buffer.java:492)
+	at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:135)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.getByteBuffer(AbstractKafkaAvroDeserializer.java:75)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:118)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:92)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:120)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:112)
+	at kafka.tools.ConsoleConsumer$.process(ConsoleConsumer.scala:137)
+	at kafka.tools.ConsoleConsumer$.run(ConsoleConsumer.scala:75)
+	at kafka.tools.ConsoleConsumer$.main(ConsoleConsumer.scala:50)
+	at kafka.tools.ConsoleConsumer.main(ConsoleConsumer.scala)
+[2017-06-08 11:34:55,206] ERROR Unknown error when running consumer:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: Error deserializing Avro message for id -1
+Caused by: java.nio.BufferUnderflowException
+	at java.nio.Buffer.nextGetIndex(Buffer.java:492)
+	at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:135)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.getByteBuffer(AbstractKafkaAvroDeserializer.java:75)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:118)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:92)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:120)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:112)
+	at kafka.tools.ConsoleConsumer$.process(ConsoleConsumer.scala:137)
+	at kafka.tools.ConsoleConsumer$.run(ConsoleConsumer.scala:75)
+	at kafka.tools.ConsoleConsumer$.main(ConsoleConsumer.scala:50)
+	at kafka.tools.ConsoleConsumer.main(ConsoleConsumer.scala)
+[2017-06-08 11:35:19,057] INFO 127.0.0.1 - - [08/Jun/2017:11:35:19 +0800] "POST /subjects/test-value/versions HTTP/1.1" 200 8  6 (io.confluent.rest-utils.requests)
+[2017-06-08 11:35:28,309] ERROR Unknown error when running consumer:  (kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.SerializationException: Error deserializing Avro message for id -1
+Caused by: java.nio.BufferUnderflowException
+	at java.nio.Buffer.nextGetIndex(Buffer.java:492)
+	at java.nio.HeapByteBuffer.get(HeapByteBuffer.java:135)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.getByteBuffer(AbstractKafkaAvroDeserializer.java:75)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:118)
+	at io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer.deserialize(AbstractKafkaAvroDeserializer.java:92)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:120)
+	at io.confluent.kafka.formatter.AvroMessageFormatter.writeTo(AvroMessageFormatter.java:112)
+	at kafka.tools.ConsoleConsumer$.process(ConsoleConsumer.scala:137)
+	at kafka.tools.ConsoleConsumer$.run(ConsoleConsumer.scala:75)
+	at kafka.tools.ConsoleConsumer$.main(ConsoleConsumer.scala:50)
+	at kafka.tools.ConsoleConsumer.main(ConsoleConsumer.scala)
+[2017-06-08 11:40:44,681] INFO Stopped NetworkTrafficServerConnector@4068f746{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-08 11:40:44,694] INFO Stopped o.e.j.s.ServletContextHandler@7991bfbf{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-08 11:40:44,695] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-08 11:40:44,695] INFO [kafka-store-reader-thread-_schemas], Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-08 11:40:44,696] INFO [kafka-store-reader-thread-_schemas], Stopped  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-08 11:40:44,696] INFO [kafka-store-reader-thread-_schemas], Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-08 11:40:44,701] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-08 11:47:31,844] INFO SchemaRegistryConfig values: 
+	authentication.realm = 
+	kafkastore.timeout.ms = 500
+	kafkastore.security.protocol = PLAINTEXT
+	kafkastore.ssl.truststore.type = JKS
+	kafkastore.ssl.protocol = TLS
+	access.control.allow.methods = 
+	authentication.method = NONE
+	ssl.keymanager.algorithm = 
+	schema.registry.zk.namespace = schema_registry
+	ssl.key.password = 
+	ssl.cipher.suites = []
+	avro.compatibility.level = backward
+	shutdown.graceful.ms = 1000
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	metrics.jmx.prefix = kafka.schema.registry
+	ssl.provider = 
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	kafkastore.ssl.keystore.type = JKS
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.truststore.location = 
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.key.password = 
+	ssl.keystore.password = 
+	ssl.client.auth = false
+	kafkastore.init.timeout.ms = 60000
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	request.logger.name = io.confluent.rest-utils.requests
+	kafkastore.ssl.provider = 
+	ssl.protocol = TLS
+	access.control.allow.origin = 
+	ssl.trustmanager.algorithm = 
+	kafkastore.bootstrap.servers = []
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	zookeeper.set.acl = false
+	kafkastore.ssl.keystore.location = 
+	kafkastore.connection.url = localhost:2181
+	metrics.num.samples = 2
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	port = 8081
+	ssl.truststore.password = 
+	debug = false
+	compression.enable = false
+	kafkastore.ssl.truststore.password = 
+	kafkastore.sasl.kerberos.service.name = 
+	kafkastore.ssl.keystore.password = 
+	kafkastore.ssl.cipher.suites = 
+	authentication.roles = [*]
+	ssl.enabled.protocols = []
+	kafkastore.sasl.mechanism = GSSAPI
+	master.eligibility = true
+	listeners = [http://0.0.0.0:8081]
+	ssl.keystore.location = 
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	ssl.truststore.location = 
+	kafkastore.zk.session.timeout.ms = 30000
+	metrics.sample.window.ms = 30000
+	kafkastore.topic = _schemas
+	host.name = cloud-C
+	metric.reporters = []
+	ssl.truststore.type = JKS
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	kafkastore.topic.replication.factor = 3
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	ssl.keystore.type = JKS
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig)
+[2017-06-08 11:47:32,714] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://cloud-C:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-08 11:47:32,743] WARN The replication factor of the schema topic _schemas is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-08 11:47:32,991] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-08 11:47:32,992] INFO [kafka-store-reader-thread-_schemas], Starting  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-08 11:47:33,100] INFO Wait to catch up until the offset of the last message at 3 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-08 11:47:33,125] INFO Created schema registry namespace localhost:2181/schema_registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-08 11:47:33,165] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-08 11:47:33,189] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-08 11:47:33,220] INFO Logging initialized @1744ms (org.eclipse.jetty.util.log)
+[2017-06-08 11:47:33,265] INFO Adding listener: http://0.0.0.0:8081 (io.confluent.rest.Application)
+[2017-06-08 11:47:33,344] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server)
+[2017-06-08 11:47:34,064] INFO HV000001: Hibernate Validator 5.1.2.Final (org.hibernate.validator.internal.util.Version)
+[2017-06-08 11:47:34,252] INFO Started o.e.j.s.ServletContextHandler@5fa2004b{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-08 11:47:34,264] INFO Started NetworkTrafficServerConnector@44406d07{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-08 11:47:34,265] INFO Started @2791ms (org.eclipse.jetty.server.Server)
+[2017-06-08 11:47:34,266] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2017-06-08 16:19:22,253] INFO 0:0:0:0:0:0:0:1 - - [08/Jun/2017:16:19:22 +0800] "GET /config HTTP/1.1" 200 33  112 (io.confluent.rest-utils.requests)
+[2017-06-08 16:19:30,622] INFO 0:0:0:0:0:0:0:1 - - [08/Jun/2017:16:19:30 +0800] "GET /config HTTP/1.1" 200 33  3 (io.confluent.rest-utils.requests)
+[2017-06-08 16:19:37,869] INFO 0:0:0:0:0:0:0:1 - - [08/Jun/2017:16:19:37 +0800] "GET /config HTTP/1.1" 200 33  5 (io.confluent.rest-utils.requests)
+[2017-06-08 16:46:11,980] INFO Wait to catch up until the offset of the last message at 4 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-08 16:46:12,009] INFO 127.0.0.1 - - [08/Jun/2017:16:46:11 +0800] "POST /subjects/testforavro-value/versions HTTP/1.1" 200 9  239 (io.confluent.rest-utils.requests)
+[2017-06-08 16:50:51,274] INFO 127.0.0.1 - - [08/Jun/2017:16:50:51 +0800] "GET /schemas/ids/21 HTTP/1.1" 200 109  10 (io.confluent.rest-utils.requests)
+[2017-06-08 16:57:06,896] INFO 127.0.0.1 - - [08/Jun/2017:16:57:06 +0800] "GET /schemas/ids/21 HTTP/1.1" 200 109  7 (io.confluent.rest-utils.requests)
+[2017-06-08 17:01:39,324] INFO Wait to catch up until the offset of the last message at 5 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-08 17:01:39,343] INFO 127.0.0.1 - - [08/Jun/2017:17:01:39 +0800] "POST /subjects/testforavro-value/versions HTTP/1.1" 409 93  25 (io.confluent.rest-utils.requests)
+[2017-06-09 10:20:20,163] INFO Stopped NetworkTrafficServerConnector@44406d07{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-09 10:20:20,173] INFO Stopped o.e.j.s.ServletContextHandler@5fa2004b{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-09 10:20:20,175] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-09 10:20:20,175] INFO [kafka-store-reader-thread-_schemas], Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-09 10:20:20,176] INFO [kafka-store-reader-thread-_schemas], Stopped  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-09 10:20:20,176] INFO [kafka-store-reader-thread-_schemas], Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-09 10:20:20,179] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-10 16:18:28,144] INFO SchemaRegistryConfig values: 
+	authentication.realm = 
+	kafkastore.timeout.ms = 500
+	kafkastore.security.protocol = PLAINTEXT
+	kafkastore.ssl.truststore.type = JKS
+	kafkastore.ssl.protocol = TLS
+	access.control.allow.methods = 
+	authentication.method = NONE
+	ssl.keymanager.algorithm = 
+	schema.registry.zk.namespace = schema_registry
+	ssl.key.password = 
+	ssl.cipher.suites = []
+	avro.compatibility.level = backward
+	shutdown.graceful.ms = 1000
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	metrics.jmx.prefix = kafka.schema.registry
+	ssl.provider = 
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	kafkastore.ssl.keystore.type = JKS
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.truststore.location = 
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.key.password = 
+	ssl.keystore.password = 
+	ssl.client.auth = false
+	kafkastore.init.timeout.ms = 60000
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	request.logger.name = io.confluent.rest-utils.requests
+	kafkastore.ssl.provider = 
+	ssl.protocol = TLS
+	access.control.allow.origin = 
+	ssl.trustmanager.algorithm = 
+	kafkastore.bootstrap.servers = []
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	zookeeper.set.acl = false
+	kafkastore.ssl.keystore.location = 
+	kafkastore.connection.url = localhost:2181
+	metrics.num.samples = 2
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	port = 8081
+	ssl.truststore.password = 
+	debug = false
+	compression.enable = false
+	kafkastore.ssl.truststore.password = 
+	kafkastore.sasl.kerberos.service.name = 
+	kafkastore.ssl.keystore.password = 
+	kafkastore.ssl.cipher.suites = 
+	authentication.roles = [*]
+	ssl.enabled.protocols = []
+	kafkastore.sasl.mechanism = GSSAPI
+	master.eligibility = true
+	listeners = [http://0.0.0.0:8081]
+	ssl.keystore.location = 
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	ssl.truststore.location = 
+	kafkastore.zk.session.timeout.ms = 30000
+	metrics.sample.window.ms = 30000
+	kafkastore.topic = _schemas
+	host.name = cloud-C
+	metric.reporters = []
+	ssl.truststore.type = JKS
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	kafkastore.topic.replication.factor = 3
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	ssl.keystore.type = JKS
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig)
+[2017-06-10 16:18:29,005] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://cloud-C:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 16:18:29,034] WARN The replication factor of the schema topic _schemas is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 16:18:29,269] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-10 16:18:29,271] INFO [kafka-store-reader-thread-_schemas], Starting  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-10 16:18:29,382] INFO Wait to catch up until the offset of the last message at 6 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 16:18:29,431] INFO Created schema registry namespace localhost:2181/schema_registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-10 16:18:29,480] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-10 16:18:29,495] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-10 16:18:29,525] INFO Logging initialized @1736ms (org.eclipse.jetty.util.log)
+[2017-06-10 16:18:29,569] INFO Adding listener: http://0.0.0.0:8081 (io.confluent.rest.Application)
+[2017-06-10 16:18:29,648] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server)
+[2017-06-10 16:18:30,354] INFO HV000001: Hibernate Validator 5.1.2.Final (org.hibernate.validator.internal.util.Version)
+[2017-06-10 16:18:30,540] INFO Started o.e.j.s.ServletContextHandler@315a87c0{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-10 16:18:30,552] INFO Started NetworkTrafficServerConnector@604043dd{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-10 16:18:30,553] INFO Started @2765ms (org.eclipse.jetty.server.Server)
+[2017-06-10 16:18:30,554] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2017-06-10 16:18:38,744] INFO Wait to catch up until the offset of the last message at 7 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 16:18:38,804] INFO 127.0.0.1 - - [10/Jun/2017:16:18:38 +0800] "POST /subjects/test-mysql-jdbc-kafkatable-value/versions HTTP/1.1" 200 9  316 (io.confluent.rest-utils.requests)
+[2017-06-10 16:18:39,123] INFO Wait to catch up until the offset of the last message at 8 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 16:18:39,139] INFO 127.0.0.1 - - [10/Jun/2017:16:18:39 +0800] "POST /subjects/test-mysql-jdbc-testtable-value/versions HTTP/1.1" 200 9  19 (io.confluent.rest-utils.requests)
+[2017-06-10 16:22:03,914] INFO 127.0.0.1 - - [10/Jun/2017:16:22:03 +0800] "GET /schemas/ids/42 HTTP/1.1" 200 205  10 (io.confluent.rest-utils.requests)
+[2017-06-10 17:13:50,008] INFO Wait to catch up until the offset of the last message at 9 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 17:13:50,030] INFO 127.0.0.1 - - [10/Jun/2017:17:13:49 +0800] "POST /subjects/test-mysql-jdbc-tmst-value/versions HTTP/1.1" 200 9  48 (io.confluent.rest-utils.requests)
+[2017-06-10 17:29:17,416] INFO Wait to catch up until the offset of the last message at 10 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 17:29:17,430] INFO 127.0.0.1 - - [10/Jun/2017:17:29:17 +0800] "POST /subjects/test-mysql-tmst-tmst-value/versions HTTP/1.1" 200 9  18 (io.confluent.rest-utils.requests)
+[2017-06-10 17:36:02,387] INFO 127.0.0.1 - - [10/Jun/2017:17:36:02 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  9 (io.confluent.rest-utils.requests)
+[2017-06-10 17:38:13,590] INFO 127.0.0.1 - - [10/Jun/2017:17:38:13 +0800] "POST /subjects/test-mysql-tmst-tmst-value/versions HTTP/1.1" 200 9  8 (io.confluent.rest-utils.requests)
+[2017-06-10 17:46:08,803] INFO 127.0.0.1 - - [10/Jun/2017:17:46:08 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  5 (io.confluent.rest-utils.requests)
+[2017-06-10 17:49:31,751] INFO Wait to catch up until the offset of the last message at 11 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 17:49:31,764] INFO 127.0.0.1 - - [10/Jun/2017:17:49:31 +0800] "POST /subjects/test-mysql-tmst2-tmst-value/versions HTTP/1.1" 200 9  18 (io.confluent.rest-utils.requests)
+[2017-06-10 17:50:09,174] INFO 127.0.0.1 - - [10/Jun/2017:17:50:09 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  4 (io.confluent.rest-utils.requests)
+[2017-06-10 17:50:57,702] INFO 127.0.0.1 - - [10/Jun/2017:17:50:57 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  7 (io.confluent.rest-utils.requests)
+[2017-06-10 17:56:09,964] INFO Wait to catch up until the offset of the last message at 12 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 17:56:09,977] INFO 127.0.0.1 - - [10/Jun/2017:17:56:09 +0800] "POST /subjects/test-hjw-tmst-value/versions HTTP/1.1" 200 9  18 (io.confluent.rest-utils.requests)
+[2017-06-10 17:56:21,158] INFO 127.0.0.1 - - [10/Jun/2017:17:56:21 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  4 (io.confluent.rest-utils.requests)
+[2017-06-10 17:57:27,397] INFO Wait to catch up until the offset of the last message at 13 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 17:57:27,414] INFO 127.0.0.1 - - [10/Jun/2017:17:57:27 +0800] "POST /subjects/test-topic-tmst-value/versions HTTP/1.1" 200 9  23 (io.confluent.rest-utils.requests)
+[2017-06-10 17:57:27,603] INFO 127.0.0.1 - - [10/Jun/2017:17:57:27 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  7 (io.confluent.rest-utils.requests)
+[2017-06-10 18:09:09,821] INFO Wait to catch up until the offset of the last message at 14 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 18:09:09,834] INFO 127.0.0.1 - - [10/Jun/2017:18:09:09 +0800] "POST /subjects/test-tmstonly-tmst-value/versions HTTP/1.1" 200 9  17 (io.confluent.rest-utils.requests)
+[2017-06-10 18:09:12,156] INFO 127.0.0.1 - - [10/Jun/2017:18:09:12 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  3 (io.confluent.rest-utils.requests)
+[2017-06-10 18:10:25,198] INFO 127.0.0.1 - - [10/Jun/2017:18:10:25 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  4 (io.confluent.rest-utils.requests)
+[2017-06-10 18:10:49,464] INFO Wait to catch up until the offset of the last message at 15 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 18:10:49,481] INFO 127.0.0.1 - - [10/Jun/2017:18:10:49 +0800] "POST /subjects/test-tt-tmst-value/versions HTTP/1.1" 200 9  20 (io.confluent.rest-utils.requests)
+[2017-06-10 18:10:49,662] INFO 127.0.0.1 - - [10/Jun/2017:18:10:49 +0800] "GET /schemas/ids/43 HTTP/1.1" 200 549  5 (io.confluent.rest-utils.requests)
+[2017-06-10 18:43:24,971] INFO Wait to catch up until the offset of the last message at 16 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 18:43:24,984] INFO 127.0.0.1 - - [10/Jun/2017:18:43:24 +0800] "POST /subjects/user-detect-user-value/versions HTTP/1.1" 200 9  16 (io.confluent.rest-utils.requests)
+[2017-06-10 18:44:55,375] INFO 127.0.0.1 - - [10/Jun/2017:18:44:55 +0800] "GET /schemas/ids/44 HTTP/1.1" 200 387  4 (io.confluent.rest-utils.requests)
+[2017-06-10 18:48:54,611] INFO 127.0.0.1 - - [10/Jun/2017:18:48:54 +0800] "GET /schemas/ids/44 HTTP/1.1" 200 387  8 (io.confluent.rest-utils.requests)
+[2017-06-10 18:50:22,839] INFO 127.0.0.1 - - [10/Jun/2017:18:50:22 +0800] "GET /schemas/ids/44 HTTP/1.1" 200 387  7 (io.confluent.rest-utils.requests)
+[2017-06-10 18:54:02,865] INFO Wait to catch up until the offset of the last message at 17 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 18:54:02,878] INFO 127.0.0.1 - - [10/Jun/2017:18:54:02 +0800] "POST /subjects/user-detect-test-user-value/versions HTTP/1.1" 200 9  17 (io.confluent.rest-utils.requests)
+[2017-06-10 18:54:21,245] INFO 127.0.0.1 - - [10/Jun/2017:18:54:21 +0800] "GET /schemas/ids/44 HTTP/1.1" 200 387  7 (io.confluent.rest-utils.requests)
+[2017-06-10 19:08:49,835] INFO Wait to catch up until the offset of the last message at 18 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 19:08:49,848] INFO 127.0.0.1 - - [10/Jun/2017:19:08:49 +0800] "POST /subjects/modification-device-value/versions HTTP/1.1" 200 9  17 (io.confluent.rest-utils.requests)
+[2017-06-10 19:08:50,162] INFO Wait to catch up until the offset of the last message at 19 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-10 19:08:50,174] INFO 127.0.0.1 - - [10/Jun/2017:19:08:50 +0800] "POST /subjects/modification-user-value/versions HTTP/1.1" 200 9  15 (io.confluent.rest-utils.requests)
+[2017-06-10 19:09:26,338] INFO 127.0.0.1 - - [10/Jun/2017:19:09:26 +0800] "GET /schemas/ids/44 HTTP/1.1" 200 387  7 (io.confluent.rest-utils.requests)
+[2017-06-10 19:09:53,818] INFO 127.0.0.1 - - [10/Jun/2017:19:09:53 +0800] "GET /schemas/ids/45 HTTP/1.1" 200 392  6 (io.confluent.rest-utils.requests)
+[2017-06-11 17:40:58,593] INFO Stopped NetworkTrafficServerConnector@604043dd{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-11 17:40:58,603] INFO Stopped o.e.j.s.ServletContextHandler@315a87c0{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-11 17:40:58,604] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-11 17:40:58,605] INFO [kafka-store-reader-thread-_schemas], Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-11 17:40:58,605] INFO [kafka-store-reader-thread-_schemas], Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-11 17:40:58,605] INFO [kafka-store-reader-thread-_schemas], Stopped  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-11 17:40:58,608] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-11 21:03:16,519] INFO SchemaRegistryConfig values: 
+	authentication.realm = 
+	kafkastore.timeout.ms = 500
+	kafkastore.security.protocol = PLAINTEXT
+	kafkastore.ssl.truststore.type = JKS
+	kafkastore.ssl.protocol = TLS
+	access.control.allow.methods = 
+	authentication.method = NONE
+	ssl.keymanager.algorithm = 
+	schema.registry.zk.namespace = schema_registry
+	ssl.key.password = 
+	ssl.cipher.suites = []
+	avro.compatibility.level = backward
+	shutdown.graceful.ms = 1000
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	metrics.jmx.prefix = kafka.schema.registry
+	ssl.provider = 
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	kafkastore.ssl.keystore.type = JKS
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.truststore.location = 
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.key.password = 
+	ssl.keystore.password = 
+	ssl.client.auth = false
+	kafkastore.init.timeout.ms = 60000
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	request.logger.name = io.confluent.rest-utils.requests
+	kafkastore.ssl.provider = 
+	ssl.protocol = TLS
+	access.control.allow.origin = 
+	ssl.trustmanager.algorithm = 
+	kafkastore.bootstrap.servers = []
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	zookeeper.set.acl = false
+	kafkastore.ssl.keystore.location = 
+	kafkastore.connection.url = localhost:2181
+	metrics.num.samples = 2
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	port = 8081
+	ssl.truststore.password = 
+	debug = false
+	compression.enable = false
+	kafkastore.ssl.truststore.password = 
+	kafkastore.sasl.kerberos.service.name = 
+	kafkastore.ssl.keystore.password = 
+	kafkastore.ssl.cipher.suites = 
+	authentication.roles = [*]
+	ssl.enabled.protocols = []
+	kafkastore.sasl.mechanism = GSSAPI
+	master.eligibility = true
+	listeners = [http://0.0.0.0:8081]
+	ssl.keystore.location = 
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	ssl.truststore.location = 
+	kafkastore.zk.session.timeout.ms = 30000
+	metrics.sample.window.ms = 30000
+	kafkastore.topic = _schemas
+	host.name = cloud-C
+	metric.reporters = []
+	ssl.truststore.type = JKS
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	kafkastore.topic.replication.factor = 3
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	ssl.keystore.type = JKS
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig)
+[2017-06-11 21:03:17,424] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://cloud-C:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-11 21:03:17,454] WARN The replication factor of the schema topic _schemas is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-11 21:03:17,698] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-11 21:03:17,699] INFO [kafka-store-reader-thread-_schemas], Starting  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-11 21:03:17,800] INFO Wait to catch up until the offset of the last message at 21 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-11 21:03:17,966] INFO Created schema registry namespace localhost:2181/schema_registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-11 21:03:18,007] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-11 21:03:18,032] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-11 21:03:18,065] INFO Logging initialized @1915ms (org.eclipse.jetty.util.log)
+[2017-06-11 21:03:18,111] INFO Adding listener: http://0.0.0.0:8081 (io.confluent.rest.Application)
+[2017-06-11 21:03:18,192] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server)
+[2017-06-11 21:03:18,903] INFO HV000001: Hibernate Validator 5.1.2.Final (org.hibernate.validator.internal.util.Version)
+[2017-06-11 21:03:19,090] INFO Started o.e.j.s.ServletContextHandler@7edff89{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-11 21:03:19,102] INFO Started NetworkTrafficServerConnector@8216547{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-11 21:03:19,103] INFO Started @2953ms (org.eclipse.jetty.server.Server)
+[2017-06-11 21:03:19,104] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2017-06-11 21:05:38,159] INFO 127.0.0.1 - - [11/Jun/2017:21:05:38 +0800] "GET /schemas/ids/42 HTTP/1.1" 200 205  108 (io.confluent.rest-utils.requests)
+[2017-06-11 21:06:07,043] INFO 127.0.0.1 - - [11/Jun/2017:21:06:07 +0800] "GET /schemas/ids/42 HTTP/1.1" 200 205  7 (io.confluent.rest-utils.requests)
+[2017-06-11 21:06:55,828] INFO 0:0:0:0:0:0:0:1 - - [11/Jun/2017:21:06:55 +0800] "GET /schemas/ids/42 HTTP/1.1" 200 205  7 (io.confluent.rest-utils.requests)
+[2017-06-11 21:21:18,220] INFO 0:0:0:0:0:0:0:1 - - [11/Jun/2017:21:21:18 +0800] "GET /subjects HTTP/1.1" 200 394  89 (io.confluent.rest-utils.requests)
+[2017-06-11 21:25:37,579] INFO 0:0:0:0:0:0:0:1 - - [11/Jun/2017:21:25:37 +0800] "GET /subjects/modification-user-value/versions/latest HTTP/1.1" 200 443  16 (io.confluent.rest-utils.requests)
+[2017-06-11 21:27:11,060] INFO 0:0:0:0:0:0:0:1 - - [11/Jun/2017:21:27:11 +0800] "GET /schemas/ids/44 HTTP/1.1" 200 387  6 (io.confluent.rest-utils.requests)
+[2017-06-12 10:06:01,141] INFO 0:0:0:0:0:0:0:1 - - [12/Jun/2017:10:06:01 +0800] "GET /subjects/modification-user-value/versions/latest HTTP/1.1" 200 443  7 (io.confluent.rest-utils.requests)
+[2017-06-13 15:55:07,835] INFO Stopped NetworkTrafficServerConnector@8216547{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-13 15:55:07,845] INFO Stopped o.e.j.s.ServletContextHandler@7edff89{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-13 15:55:07,849] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-13 15:55:07,850] INFO [kafka-store-reader-thread-_schemas], Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-13 15:55:07,851] INFO [kafka-store-reader-thread-_schemas], Stopped  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-13 15:55:07,851] INFO [kafka-store-reader-thread-_schemas], Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-13 15:55:07,853] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-13 17:38:34,437] INFO SchemaRegistryConfig values: 
+	authentication.realm = 
+	kafkastore.timeout.ms = 500
+	kafkastore.security.protocol = PLAINTEXT
+	kafkastore.ssl.truststore.type = JKS
+	kafkastore.ssl.protocol = TLS
+	access.control.allow.methods = 
+	authentication.method = NONE
+	ssl.keymanager.algorithm = 
+	schema.registry.zk.namespace = schema_registry
+	ssl.key.password = 
+	ssl.cipher.suites = []
+	avro.compatibility.level = backward
+	shutdown.graceful.ms = 1000
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	metrics.jmx.prefix = kafka.schema.registry
+	ssl.provider = 
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	kafkastore.ssl.keystore.type = JKS
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.truststore.location = 
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.key.password = 
+	ssl.keystore.password = 
+	ssl.client.auth = false
+	kafkastore.init.timeout.ms = 60000
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	request.logger.name = io.confluent.rest-utils.requests
+	kafkastore.ssl.provider = 
+	ssl.protocol = TLS
+	access.control.allow.origin = 
+	ssl.trustmanager.algorithm = 
+	kafkastore.bootstrap.servers = []
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	zookeeper.set.acl = false
+	kafkastore.ssl.keystore.location = 
+	kafkastore.connection.url = localhost:2181
+	metrics.num.samples = 2
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	port = 8081
+	ssl.truststore.password = 
+	debug = false
+	compression.enable = false
+	kafkastore.ssl.truststore.password = 
+	kafkastore.sasl.kerberos.service.name = 
+	kafkastore.ssl.keystore.password = 
+	kafkastore.ssl.cipher.suites = 
+	authentication.roles = [*]
+	ssl.enabled.protocols = []
+	kafkastore.sasl.mechanism = GSSAPI
+	master.eligibility = true
+	listeners = [http://0.0.0.0:8081]
+	ssl.keystore.location = 
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	ssl.truststore.location = 
+	kafkastore.zk.session.timeout.ms = 30000
+	metrics.sample.window.ms = 30000
+	kafkastore.topic = _schemas
+	host.name = cloud-C
+	metric.reporters = []
+	ssl.truststore.type = JKS
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	kafkastore.topic.replication.factor = 3
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	ssl.keystore.type = JKS
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig)
+[2017-06-13 17:38:35,324] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://cloud-C:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-13 17:38:35,353] WARN The replication factor of the schema topic _schemas is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-13 17:38:35,592] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-13 17:38:35,594] INFO [kafka-store-reader-thread-_schemas], Starting  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-13 17:38:35,703] INFO Wait to catch up until the offset of the last message at 22 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-13 17:38:35,858] INFO Created schema registry namespace localhost:2181/schema_registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-13 17:38:35,907] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-13 17:38:35,922] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-13 17:38:35,952] INFO Logging initialized @1881ms (org.eclipse.jetty.util.log)
+[2017-06-13 17:38:36,002] INFO Adding listener: http://0.0.0.0:8081 (io.confluent.rest.Application)
+[2017-06-13 17:38:36,086] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server)
+[2017-06-13 17:38:36,814] INFO HV000001: Hibernate Validator 5.1.2.Final (org.hibernate.validator.internal.util.Version)
+[2017-06-13 17:38:37,005] INFO Started o.e.j.s.ServletContextHandler@587cc9a3{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-13 17:38:37,016] INFO Started NetworkTrafficServerConnector@6fc75315{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-13 17:38:37,017] INFO Started @2947ms (org.eclipse.jetty.server.Server)
+[2017-06-13 17:38:37,018] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2017-06-14 10:16:31,138] INFO Stopped NetworkTrafficServerConnector@6fc75315{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-14 10:16:31,148] INFO Stopped o.e.j.s.ServletContextHandler@587cc9a3{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-14 10:16:31,150] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-14 10:16:31,150] INFO [kafka-store-reader-thread-_schemas], Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 10:16:31,152] INFO [kafka-store-reader-thread-_schemas], Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 10:16:31,152] INFO [kafka-store-reader-thread-_schemas], Stopped  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 10:16:31,154] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 10:26:19,880] INFO SchemaRegistryConfig values: 
+	authentication.realm = 
+	kafkastore.timeout.ms = 500
+	kafkastore.security.protocol = PLAINTEXT
+	kafkastore.ssl.truststore.type = JKS
+	kafkastore.ssl.protocol = TLS
+	access.control.allow.methods = 
+	authentication.method = NONE
+	ssl.keymanager.algorithm = 
+	schema.registry.zk.namespace = schema_registry
+	ssl.key.password = 
+	ssl.cipher.suites = []
+	avro.compatibility.level = backward
+	shutdown.graceful.ms = 1000
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	metrics.jmx.prefix = kafka.schema.registry
+	ssl.provider = 
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	kafkastore.ssl.keystore.type = JKS
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.truststore.location = 
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.key.password = 
+	ssl.keystore.password = 
+	ssl.client.auth = false
+	kafkastore.init.timeout.ms = 60000
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	request.logger.name = io.confluent.rest-utils.requests
+	kafkastore.ssl.provider = 
+	ssl.protocol = TLS
+	access.control.allow.origin = 
+	ssl.trustmanager.algorithm = 
+	kafkastore.bootstrap.servers = []
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	zookeeper.set.acl = false
+	kafkastore.ssl.keystore.location = 
+	kafkastore.connection.url = localhost:2181
+	metrics.num.samples = 2
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	port = 8081
+	ssl.truststore.password = 
+	debug = false
+	compression.enable = false
+	kafkastore.ssl.truststore.password = 
+	kafkastore.sasl.kerberos.service.name = 
+	kafkastore.ssl.keystore.password = 
+	kafkastore.ssl.cipher.suites = 
+	authentication.roles = [*]
+	ssl.enabled.protocols = []
+	kafkastore.sasl.mechanism = GSSAPI
+	master.eligibility = true
+	listeners = [http://0.0.0.0:8081]
+	ssl.keystore.location = 
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	ssl.truststore.location = 
+	kafkastore.zk.session.timeout.ms = 30000
+	metrics.sample.window.ms = 30000
+	kafkastore.topic = _schemas
+	host.name = cloud-C
+	metric.reporters = []
+	ssl.truststore.type = JKS
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	kafkastore.topic.replication.factor = 3
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	ssl.keystore.type = JKS
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig)
+[2017-06-14 10:26:20,774] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://cloud-C:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-14 10:26:20,803] WARN The replication factor of the schema topic _schemas is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-14 10:26:21,052] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 10:26:21,054] INFO [kafka-store-reader-thread-_schemas], Starting  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 10:26:21,168] INFO Wait to catch up until the offset of the last message at 23 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-14 10:26:21,320] INFO Created schema registry namespace localhost:2181/schema_registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-14 10:26:21,361] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-14 10:26:21,374] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-14 10:26:21,406] INFO Logging initialized @1893ms (org.eclipse.jetty.util.log)
+[2017-06-14 10:26:21,452] INFO Adding listener: http://0.0.0.0:8081 (io.confluent.rest.Application)
+[2017-06-14 10:26:21,532] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server)
+[2017-06-14 10:26:22,253] INFO HV000001: Hibernate Validator 5.1.2.Final (org.hibernate.validator.internal.util.Version)
+[2017-06-14 10:26:22,446] INFO Started o.e.j.s.ServletContextHandler@3922d60{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-14 10:26:22,457] INFO Started NetworkTrafficServerConnector@7cbc2c83{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-14 10:26:22,458] INFO Started @2946ms (org.eclipse.jetty.server.Server)
+[2017-06-14 10:26:22,459] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2017-06-14 15:38:28,504] INFO Stopped NetworkTrafficServerConnector@7cbc2c83{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-14 15:38:28,515] INFO Stopped o.e.j.s.ServletContextHandler@3922d60{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-14 15:38:28,519] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-14 15:38:28,520] INFO [kafka-store-reader-thread-_schemas], Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 15:38:28,521] INFO [kafka-store-reader-thread-_schemas], Stopped  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 15:38:28,521] INFO [kafka-store-reader-thread-_schemas], Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 15:38:28,523] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 16:03:01,191] INFO SchemaRegistryConfig values: 
+	metric.reporters = []
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	authentication.realm = 
+	ssl.keystore.type = JKS
+	kafkastore.topic = _schemas
+	metrics.jmx.prefix = kafka.schema.registry
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	kafkastore.topic.replication.factor = 3
+	ssl.truststore.password = 
+	kafkastore.timeout.ms = 500
+	host.name = cloud-C
+	kafkastore.bootstrap.servers = []
+	schema.registry.zk.namespace = schema_registry
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	kafkastore.sasl.kerberos.service.name = 
+	ssl.endpoint.identification.algorithm = 
+	compression.enable = false
+	kafkastore.ssl.truststore.type = JKS
+	avro.compatibility.level = backward
+	kafkastore.ssl.protocol = TLS
+	kafkastore.ssl.provider = 
+	kafkastore.ssl.truststore.location = 
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	kafkastore.ssl.keystore.type = JKS
+	ssl.truststore.type = JKS
+	kafkastore.ssl.truststore.password = 
+	access.control.allow.origin = 
+	ssl.truststore.location = 
+	ssl.keystore.password = 
+	port = 8081
+	kafkastore.ssl.keystore.location = 
+	master.eligibility = true
+	ssl.client.auth = false
+	kafkastore.ssl.keystore.password = 
+	kafkastore.security.protocol = PLAINTEXT
+	ssl.trustmanager.algorithm = 
+	authentication.method = NONE
+	request.logger.name = io.confluent.rest-utils.requests
+	ssl.key.password = 
+	kafkastore.zk.session.timeout.ms = 30000
+	kafkastore.sasl.mechanism = GSSAPI
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	kafkastore.ssl.key.password = 
+	zookeeper.set.acl = false
+	authentication.roles = [*]
+	metrics.num.samples = 2
+	ssl.protocol = TLS
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	kafkastore.connection.url = localhost:2181
+	debug = false
+	listeners = [http://0.0.0.0:8081]
+	ssl.provider = 
+	ssl.enabled.protocols = []
+	shutdown.graceful.ms = 1000
+	ssl.keystore.location = 
+	ssl.cipher.suites = []
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.cipher.suites = 
+	access.control.allow.methods = 
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	ssl.keymanager.algorithm = 
+	metrics.sample.window.ms = 30000
+	kafkastore.init.timeout.ms = 60000
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig)
+[2017-06-14 16:03:01,877] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://cloud-C:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-14 16:03:01,895] WARN The replication factor of the schema topic _schemas is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-14 16:03:02,099] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 16:03:02,100] INFO [kafka-store-reader-thread-_schemas], Starting  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 16:03:02,209] INFO Wait to catch up until the offset of the last message at 24 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2017-06-14 16:03:02,307] INFO Created schema registry namespace localhost:2181/schema_registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-14 16:03:02,348] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-14 16:03:02,364] INFO Successfully elected the new master: {"host":"cloud-C","port":8081,"master_eligibility":true,"version":1} (io.confluent.kafka.schemaregistry.zookeeper.ZookeeperMasterElector)
+[2017-06-14 16:03:02,396] INFO Logging initialized @1611ms (org.eclipse.jetty.util.log)
+[2017-06-14 16:03:02,436] INFO Adding listener: http://0.0.0.0:8081 (io.confluent.rest.Application)
+[2017-06-14 16:03:02,503] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server)
+[2017-06-14 16:03:03,082] INFO HV000001: Hibernate Validator 5.1.2.Final (org.hibernate.validator.internal.util.Version)
+[2017-06-14 16:03:03,217] INFO Started o.e.j.s.ServletContextHandler@25e2a451{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-14 16:03:03,227] INFO Started NetworkTrafficServerConnector@4a11eb84{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-14 16:03:03,228] INFO Started @2444ms (org.eclipse.jetty.server.Server)
+[2017-06-14 16:03:03,229] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2017-06-14 21:01:03,299] INFO Stopped NetworkTrafficServerConnector@4a11eb84{HTTP/1.1}{0.0.0.0:8081} (org.eclipse.jetty.server.NetworkTrafficServerConnector)
+[2017-06-14 21:01:03,308] INFO Stopped o.e.j.s.ServletContextHandler@25e2a451{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler)
+[2017-06-14 21:01:03,309] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2017-06-14 21:01:03,309] INFO [kafka-store-reader-thread-_schemas], Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 21:01:03,310] INFO [kafka-store-reader-thread-_schemas], Stopped  (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 21:01:03,310] INFO [kafka-store-reader-thread-_schemas], Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2017-06-14 21:01:03,312] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)

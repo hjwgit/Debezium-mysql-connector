@@ -1,0 +1,31 @@
+{
+  "name": "debe-connector-2",
+    "config": {
+      "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+      "tasks.max": "1",
+      "database.hostname": "localhost",
+      "database.port": "3306",
+      "database.user": "root",
+      "database.password": "650915",
+      "database.server.id": "2331",
+      "database.server.name": "dbserver",
+      "database.whitelist": "kafka",
+      "database.history.kafka.bootstrap.servers": "localhost:9092",
+      "database.history.kafka.topic": "dbhistory.debetopic",
+      //"database.blacklist"
+      //"table.whitelist"
+      //"table.blacklist"
+      //"column.blacklist"
+      //"column.truncate.to.length.chars"
+      //"column.mask.with.length.chars"
+      //"time.precision.mode"
+      //"decimal.handling.mode"
+      //"include.schema.changes":true,
+      //"max.batch.size":2048,
+      //"max.queue.size":1024,
+      //"poll.interval.ms":1000,
+      //"connect.timeout.ms":30000,
+      //"gtid.source.includes"
+      //"gtid.source.excludes"
+    }
+}

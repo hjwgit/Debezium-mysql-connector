@@ -1,0 +1,8 @@
+[2017-07-06 11:03:44,033] INFO [GroupCoordinator 0]: Preparing to restabilize group exampletestgroup with old generation 12 (kafka.coordinator.GroupCoordinator)
+[2017-07-06 11:03:44,037] INFO [GroupCoordinator 0]: Group exampletestgroup with generation 13 is now empty (kafka.coordinator.GroupCoordinator)
+[2017-07-06 11:09:48,077] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.GroupMetadataManager)
+[2017-07-06 11:19:48,077] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.GroupMetadataManager)
+[2017-07-06 11:29:48,077] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.GroupMetadataManager)
+[2017-07-06 11:39:48,077] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.GroupMetadataManager)
+[2017-07-06 11:49:48,077] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.GroupMetadataManager)
+[2017-07-06 11:59:48,077] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.GroupMetadataManager)

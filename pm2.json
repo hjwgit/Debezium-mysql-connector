@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "debezium-mysql-connector",
+    "script": "./bin/synchronizer",
+    "cwd": process.env.PWD,
+    "exec_mode": "fork",
+    "instances": 1,
+    "autorestart": true,
+    "min_uptime": "30s",
+    "node_args": "--max-old-space-size=65500",
+    "out_file": "/tmp/debezium-mysql-connector.log",
+    "error_file": "/tmp/debezium-mysql-connector.log",
+    "combine_logs": true,
+  }]
+}

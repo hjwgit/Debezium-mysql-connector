@@ -1,0 +1,23 @@
+[2017-06-14 10:16:55,057] INFO Shutting down the log cleaner. (kafka.log.LogCleaner)
+[2017-06-14 10:16:55,058] INFO [kafka-log-cleaner-thread-0], Shutting down (kafka.log.LogCleaner)
+[2017-06-14 10:16:55,059] INFO [kafka-log-cleaner-thread-0], Stopped  (kafka.log.LogCleaner)
+[2017-06-14 10:16:55,059] INFO [kafka-log-cleaner-thread-0], Shutdown completed (kafka.log.LogCleaner)
+[2017-06-14 10:17:13,497] INFO Starting the log cleaner (kafka.log.LogCleaner)
+[2017-06-14 10:17:13,499] INFO [kafka-log-cleaner-thread-0], Starting  (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,785] INFO Cleaner 0: Beginning cleaning of log _schemas-0. (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,785] INFO Cleaner 0: Building offset map for _schemas-0... (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,812] INFO Cleaner 0: Building offset map for log _schemas-0 for 1 segments in offset range [0, 23). (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,816] INFO Cleaner 0: Offset map for log _schemas-0 complete. (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,821] INFO Cleaner 0: Cleaning log _schemas-0 (cleaning prior to Tue Jun 13 17:38:35 CST 2017, discarding tombstones prior to Thu Jan 01 08:00:00 CST 1970)... (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,823] INFO Cleaner 0: Cleaning segment 0 in log _schemas-0 (largest timestamp Tue Jun 13 17:38:35 CST 2017) into 0, retaining deletes. (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,873] INFO Cleaner 0: Swapping in cleaned segment 0 for segment(s) 0 in log _schemas-0. (kafka.log.LogCleaner)
+[2017-06-14 10:26:28,879] INFO [kafka-log-cleaner-thread-0], 
+	Log cleaner thread 0 cleaned log _schemas-0 (dirty section = [0, 0])
+	0.0 MB of log processed in 0.1 seconds (0.1 MB/sec).
+	Indexed 0.0 MB in 0.0 seconds (0.3 Mb/sec, 34.8% of total time)
+	Buffer utilization: 0.0%
+	Cleaned 0.0 MB in 0.1 seconds (0.1 Mb/sec, 65.2% of total time)
+	Start size: 0.0 MB (23 messages)
+	End size: 0.0 MB (16 messages)
+	4.8% size reduction (30.4% fewer messages)
+ (kafka.log.LogCleaner)

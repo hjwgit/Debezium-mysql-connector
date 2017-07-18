@@ -13,29 +13,29 @@ binlog_format=row<br>
 
 2. npm install
 
-3. start zookeeper (localhost:2181)
+3. start zookeeper (localhost:2181)<br>
 ./bin/zookeeper-server-start ./etc/kafka/zookeeper.properties >> ../zookeeper/zookeeper.log &
 
-4. start kafka broker (localhost:9092)
+4. start kafka broker (localhost:9092)<br>
 ./bin/kafka-server-start ./etc/kafka/server.properties
 
-5. start kafka connect (localhost:8083)
+5. start kafka connect (localhost:8083)<br>
 ./bin/connect-distributed ./etc/schema-registry/connect-avro-distributed2.properties
 
-6. check if kafka connect started
+6. check if kafka connect started<br>
 curl -H "Accept:application/json" localhost:8083/
 
-7. get list of registered connectors
+7. get list of registered connectors<br>
 curl -H "Accept:application/json" localhost:8083/connectors/
 
-8. register a new connector
+8. register a new connector<br>
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ -d '{ "name": "debe-connector", "config": { "connector.class": "io.debezium.connector.mysql.MySqlConnector", "tasks.max": "1", "database.hostname": "localhost", "database.port": "3306", "database.user": "root", "database.password": "xxx", "database.server.id": "2331", "database.server.name": "dbserver1", "database.whitelist": "kafka", "database.history.kafka.bootstrap.servers": "localhost:9092", "database.history.kafka.topic": "dbhistory.debetopic" } }'
 
-9. get info of connector
+9. get info of connector<br>
 curl -X GET localhost:8083/connectors/debe-connector
 
-10. configure the database name and tables
+10. configure the database name and tables<br>
 config config.json
 
-11. start
+11. start<br>
 pm2 start pm2.json

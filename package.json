@@ -7,7 +7,7 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Make synchronous operation between mysql and redis.",
   "dependencies": {
     "avsc": "^5.0.4",
     "bluebird": "^3.5.0",
@@ -19,5 +19,16 @@
     "jshint": "^2.9.5",
     "moment": "^2.18.1",
     "pm2": "^2.5.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjwgit/Debezium-mysql-connector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hjwgit/Debezium-mysql-connector/issues"
+  },
+  "homepage": "https://github.com/hjwgit/Debezium-mysql-connector#readme"
 }

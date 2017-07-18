@@ -1,14 +1,14 @@
 {
   "topics": {
-    "serverName": "dbserver",
-    "databaseName": "kafka",
+    "serverName": "cloudhttp",
+    "databaseName": "cloud_http_v2",
     "tableWhiteList": ["Users", "Devices", "Groups",
       "User2Devices", "Group2Devices",
       "Developers", "Products", "OTAs",
       "Developer2Pros", "Product2OTAs"]
   },
     "options": {
-      "host": "localhost:2181", 
+      "host": "localhost:2181",
       "ssl": false,
       "groupId": "SyncGroup",
       "id": "consumer1",
